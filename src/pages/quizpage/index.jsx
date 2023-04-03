@@ -3,39 +3,48 @@ import { useNavigate } from "react-router-dom";
 import FinalPage from '../finalPage';
 const questions = [
     {
-        questionText: 'What is the capital of France?',
+        questionText: 'Which of the following is used in React.js to increase performance?',
         answerOptions: [
-            { answerText: 'New York', isCorrect: false },
-            { answerText: 'London', isCorrect: false },
-            { answerText: 'Paris', isCorrect: true },
-            { answerText: 'Dublin', isCorrect: false },
+            { answerText: 'Original DOM', isCorrect: false },
+            { answerText: 'Both A and C', isCorrect: false },
+            { answerText: 'Virtual DOM', isCorrect: true },
+            { answerText: 'None of the Above', isCorrect: false },
         ],
     },
     {
-        questionText: 'Who is CEO of Tesla?',
+        questionText: 'What is React JS?',
         answerOptions: [
-            { answerText: 'Jeff Bezos', isCorrect: false },
-            { answerText: 'Elon Musk', isCorrect: true },
-            { answerText: 'Bill Gates', isCorrect: false },
-            { answerText: 'Tony Stark', isCorrect: false },
+            { answerText: 'Server-Side Framework', isCorrect: false },
+            { answerText: 'User-Interface FrameworK', isCorrect: true },
+            { answerText: 'Both A and B', isCorrect: false },
+            { answerText: 'None of the Above', isCorrect: false },
         ],
     },
     {
-        questionText: 'The iPhone was created by which company?',
+        questionText: 'Identify the one which is used to pass data to components from outside',
         answerOptions: [
-            { answerText: 'Apple', isCorrect: true },
-            { answerText: 'Intel', isCorrect: false },
-            { answerText: 'Amazon', isCorrect: false },
-            { answerText: 'Microsoft', isCorrect: false },
+            { answerText: 'Props', isCorrect: true },
+            { answerText: 'PropTypes', isCorrect: false },
+            { answerText: 'setState', isCorrect: false },
+            { answerText: 'Render with Aruguments', isCorrect: false },
         ],
     },
     {
-        questionText: 'How many Harry Potter books are there?',
+        questionText: 'Who Created React JS?',
         answerOptions: [
-            { answerText: '1', isCorrect: false },
-            { answerText: '4', isCorrect: false },
-            { answerText: '6', isCorrect: false },
-            { answerText: '7', isCorrect: true },
+            { answerText: 'Jorden Mike', isCorrect: false },
+            { answerText: 'Jorden Walke', isCorrect: true },
+            { answerText: 'Tim Lee', isCorrect: false },
+            { answerText: 'Jorden Lee', isCorrect: false },
+        ],
+    },
+    {
+        questionText: 'What is Babel?',
+        answerOptions: [
+            { answerText: 'Javascript Compiler', isCorrect: true },
+            { answerText: 'Javascript Interpreter', isCorrect: false },
+            { answerText: 'Javascript Transpiler', isCorrect: false },
+            { answerText: 'None of the Above', isCorrect: false },
         ],
     },
 ];
@@ -60,7 +69,7 @@ const QuizStart = () => {
 ((currentQuestion + 1) / questions.length) * 100 );
     return (
         <>
-    {percentage == 100 ? (<FinalPage score = {score} totalQuestions = {questions.length}/>)
+    {showScore ? (<FinalPage score = {score} totalQuestions = {questions.length}/>)
         :(
         <div className="flex flex-col  h-screen w-5/12 mx-auto  border border-width:1px container bg-orange-200">
             <div className="gap-8 columns-3 flex justify-center">
